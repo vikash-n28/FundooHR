@@ -1,0 +1,46 @@
+<!--NAVBAR DISPLAY  -->
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar,#user-data" name="button" id="navbar-toggle">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+            </button>
+
+            <ul class="nav navbar-nav" id="header-data">
+                <li id="img-logo"><img src="assets/logo.png" alt="fundooHR" class="img-responsive" id="brandlogo" /></li>
+                <li id="img-title">
+                    <h3>FundooHR</h3></li>
+                <li id="time"><span class="glyphicon glyphicon-time" style="font-size: 20px;"></span>
+                    <span class="timeDisplay">{{date | date: 'dd, MMMM yyyy'}}</span></li>
+            </ul>
+            <ul class="nav navbar-nav collapse navbar-collapse" id="user-data">
+                <li id="user" class="dropdown" id="user">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user" id="user-logo" style="font-size: 20px; padding-right: 10px;"><span style="margin-right:10px;"></span>vikash</span>
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <a ui-sref="logout"><li id="userDisplay">{{user}}</li>
+                        <li id="logout">LogOut</li></a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li id="submenu" ng-if="isAuthenticated()"><a ui-sref="home.dashboard" id="nav-dashboards"><h3>DashBoard</h3><span class="sr-only">(current)</span></a></li>
+                <li id="submenu" ng-if="isAuthenticated()"><a ui-sref="home.engineers" id="nav-engineers"><h3>Engineers</h3></a></li>
+                <li id="submenu"><a href="#" id="nav-attendance"><h3>Attendance</h3></a></li>
+                <li id="submenu"><a href="#" id="nav-reports"><h3>Reports</h3></a></li>
+                <li id="submenu"><a href="#" id="nav-clients" style="color: rgba(59, 83, 114, 1);"><h3>Clients</h3></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Home Content Display-->
+<div class="homeContent">
+  <ui-view></ui-view>
+</div>

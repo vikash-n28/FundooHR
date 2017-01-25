@@ -1,0 +1,80 @@
+<!--Dashboard DIsplay-->
+<div class="firstRow">
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div class="" layout-margin layout="row">
+            <md-card id="dashboard_firstRow">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Attendance Summary</span>
+                        <a href="#"><img src="assets/summary.png" class="toggleButton"></a>
+                        <!-- <span id="circle-1">var/www/html{{dash_attendSum_marked}}</span> -->
+                        <!-- <span id="dashMarked"><h3>Marked</h3></span> class="btn btn-circle btn-success"-->
+                        <!-- <span id="circle-2">{{dash_attendSum_unmarked}}</span> -->
+                        <!-- <span id="dashUnmarked"><h3>Unmarked</h3></span> -->
+                        <!-- <center><span class="attSum-date">{{previous | date: "dd, MMMM yyyy"}}</span></center> -->
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </div>
+
+        <div class="" layout-margin layout="row">
+            <md-card id="dashboard_firstRow">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Attendance Fallout</span>
+                        <a href=""><img src="assets/summary.png" class="toggleButton"></a>
+                        <!-- <span id="fEmp"><h3 id="fEmpBind">{{dash_attendFallout_fEmp}}</h3></span> -->
+                        <!-- <span id="tEmp"><h3 id="tEmpBind">Out of {{dash_attendFallout_tEmp}}</h3></span> -->
+                        <!-- <span class="attfOut-date">{{previous | date: " MMMM yyyy"}}</span> -->
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </div>
+
+        <div class="" layout-margin layout="row">
+            <md-card id="dashboard_firstRow">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Leave Summary</span>
+                        <a href=""><img src="assets/summary.png" class="toggleButton"></a>
+                        <!-- <span><h3>{{dash_leaveSummary}}</h3></span> -->
+                        <!-- <span class="leaveSum">{{previous | date: " MMMM yyyy"}}</span> -->
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </div>
+    </md-content>
+</div>
+
+<md-content class="md-padding" layout-xs="column" layout="row" style="margin-top: 0vw;">
+    <div class="" layout-margin layout="row">
+        <md-card id="dashboard_secRow">
+            <md-card-title>
+                <md-card-title-text>
+                    <a ui-sref="home.engineers"><img src="assets/summary.png" class="toggleButton"></a>
+                    <span class="" id="dash-engineers"><h3>Engineers</h3></span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+    </div>
+    <div class="" layout-margin layout="row">
+        <md-card id="dashboard_secRow">
+            <md-card-title>
+                <md-card-title-text>
+                    <a href=""><img src="assets/summary.png" class="toggleButton"></a>
+                    <span class="" id="dash-clients"><h3>Clients</h3></span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+    </div>
+    <div class="" layout-margin layout="row">
+        <md-card id="dashboard_secRow">
+            <md-card-title>
+                <md-card-title-text>
+                    <a href=""><img src="assets/summary.png" class="toggleButton"></a>
+                    <span class="" id="dash-report"><h3>Reports</h3></span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+    </div>
+</md-content>

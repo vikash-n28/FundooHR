@@ -1,0 +1,39 @@
+<!-- Login Page-->
+<div class="fargi-container" style>
+
+</div>
+<div id="login_container">
+    <div class="brand-logo">
+        <center>
+            <img class="responsive" src="assets/logo.png" / id="brandLogo">
+        </center>
+    </div>
+
+    <div class="rectangle">
+        <header>
+            <span class="title"><h2>Login</h2></span>
+        </header>
+
+        <form method="post" ng-submit="login()" name="loginForm">
+            <div layout-gt-sm="row" class="email-text">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input type="email" ng-model="email" id="email" ng-pattern="emailFormat" required>
+                </md-input-container>
+            </div>
+            <div layout-gt-sm="row" class="password-text">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Password</label>
+                    <input type="password" ng-model="password" id="password" ng-pattern="passformate" value="Bridge@123" required>
+                </md-input-container>
+            </div>
+            <center>
+                <button type="submit" class="md-raised" ng-click="" ng-disabled="loginForm.$invalid || dataloading" id="rectangle2">Login</button>
+                <img src="assets/loading.gif" alt="loading" ng-if="dataloading" id="lodinLoader">
+            </center>
+        </form>
+        <center>
+            <div><span class="text-danger">{{error}}</span></div>
+        </center>
+    </div>
+</div>

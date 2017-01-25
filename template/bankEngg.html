@@ -1,0 +1,37 @@
+<div layout ="row" id="Prof-Second-Table">
+     <div flex>
+         <form editable-form name="editableForm" onaftersave="saveTable()" >
+          <table class="table-responsive" id="bankTable" >
+              <div type="button" ng-click="editableForm.$show()" ng-show="!editableForm.$visible" class="glyphicon glyphicon-pencil" id="profileEdit"></div>
+            <tr>
+              <th><h3>Account Number</h3></th>
+              <td editable-text="bankArray.accountNumber" e-name="name" e-required><h2>{{ bankArray.accountNumber || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Bank Name</h3></th>
+              <td editable-text="bankArray.bankName" e-name="name" e-required><h2>{{ bankArray.bankName || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>IFSC Code</h3></th>
+              <td editable-text="bankArray.ifscCode" e-name="name" e-required><h2>{{ bankArray.ifscCode || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>PAN</h3></th>
+              <td editable-text="bankArray.pan" e-name="name" e-required><h2>{{ bankArray.pan || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Pay Salary</h3></th>
+              <td editable-text="bankArray.paySalary" e-name="name" e-required><h2>{{ bankArray.paySalary || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Reason</h3></th>
+              <td editable-text="bankArray.reason" e-name="name" e-required><h2>{{ bankArray.reason || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <td><button type="submit" ng-show="editableForm.$visible" ng-disabled="editableForm.$waiting" id="profileSave">Save</button></td>
+              <td><button type="button" ng-show="editableForm.$visible" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()" id="profilecancel">Cancel</button></td>
+            </tr>
+          </table>
+          </form>
+     </div>
+</div>

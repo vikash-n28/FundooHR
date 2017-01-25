@@ -1,0 +1,53 @@
+<div layout ="row" id="Prof-Second-Table">
+     <div flex>
+        <form editable-form name="editableForm" onaftersave="saveTable()" >
+          <table class="table-responsive" id="personalTable" >
+              <div type="button" ng-click="editableForm.$show()" ng-show="!editableForm.$visible" class="glyphicon glyphicon-pencil" id="profileEdit"></div>
+            <tr>
+              <th><h3>Id</h3></th>
+              <td><h2>{{perId || '--'}}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Email</h3></th>
+              <td editable-text="personalArray.emailId" e-name="name" e-required><h2>{{ personalArray.emailId || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Mobile</h3></th>
+              <td editable-text="personalArray.mobile" e-name="name" e-required><h2>{{ personalArray.mobile || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Date of Birth</h3></th>
+              <td editable-text="personalArray.dateOfBirth" e-name="name" e-required><h2>{{ personalArray.dateOfBirth || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Father Name</h3></th>
+              <td editable-text="personalArray.fatherName" e-name="name" e-required><h2>{{ personalArray.fatherName || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Mobile(Father)</h3></th>
+              <td editable-text="personalArray.fatherMobile" e-name="name" e-required><h2>{{ personalArray.fatherMobile || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Occupation</h3></th>
+              <td editable-text="personalArray.occupation" e-name="name" e-required><h2>{{ personalArray.occupation || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Annual Salary</h3></th>
+              <td editable-text="personalArray.annualSalary" e-name="name" e-required><h2>{{ personalArray.annualSalary || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Mumbai Address</h3></th>
+              <td editable-text="personalArray.mumbaiAddress" e-name="name" e-required><h2>{{ personalArray.mumbaiAddress || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <th><h3>Permanant Address</h3></th>
+              <td editable-text="personalArray.permenantAddress" e-name="name" e-required><h2>{{ personalArray.permenantAddress || '--' }}</h2></td>
+            </tr>
+            <tr>
+              <td><button type="submit" ng-show="editableForm.$visible" ng-disabled="editableForm.$waiting" id="profileSave">Save</button></td>
+              <td><button type="button" ng-show="editableForm.$visible" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()" id="profilecancel">Cancel</button></td>
+            </tr>
+          </table>
+          </form>
+     </div>
+</div>
