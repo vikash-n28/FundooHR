@@ -3,17 +3,18 @@ angular.module('myApp')
 
 
     // Calling Profile Function
-    function prof ($scope,$state,$http,$auth,$stateParams,localStorageService,restService) {
+    function prof ($scope,$state,$http,$auth,$window,$stateParams,localStorageService,restService) {
       console.log("ProfileCtrl is Calling..");
 
-    //  toogle active for sliding from left-right
-	    $('#nav-icon1').click(function(){
-	    	  $(this).toggleClass('open');
-	    });
+        // toggle Active
+        $('#nav-icon1').click(function(){
+            $(this).toggleClass('open');
+        });
 
-      $("#sidebar-wrapper").click(function() {
-        $(this).toggleClass('active');
-      });
+        $("#sidebar-wrapper").click(function() {
+          $(this).toggleClass('active');
+        });
+
 
       $scope.isAuthenticated = function() {
           return $auth.isAuthenticated();

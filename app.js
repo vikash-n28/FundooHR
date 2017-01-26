@@ -15,7 +15,6 @@ angular.module('myApp', ['ui.router', 'ngMaterial', 'satellizer', 'LocalStorageM
         }];
 
 
-
         // loginRequired
         var loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
             var deferred = $q.defer();
@@ -27,10 +26,10 @@ angular.module('myApp', ['ui.router', 'ngMaterial', 'satellizer', 'LocalStorageM
             return deferred.promise;
         }];
 
+
         /**
          * app routes
          **/
-
         $urlRouterProvider.otherwise('/dashboard');
         $stateProvider
 
@@ -126,5 +125,4 @@ angular.module('myApp', ['ui.router', 'ngMaterial', 'satellizer', 'LocalStorageM
                 template: null,
                 controller: 'logoutCtrl'
             })
-
     }]);

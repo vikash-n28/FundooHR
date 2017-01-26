@@ -4,7 +4,7 @@ angular.module('myApp')
         $scope.isAuthenticated = function() {
             return $auth.isAuthenticated();
         };
-
+        
         // Date Object is create
         $scope.date = new Date();
     });

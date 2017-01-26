@@ -10,11 +10,12 @@ function dashBoard($scope, $http, localStorageService,restService) {
     // Previous Date
     var dashBoard = new Date();
     $scope.previous = dashBoard.setDate(dashBoard.getDate() - 1);
+
     //Converting timeStamp received from the Server
-    console.log($scope.previous);
+    // console.log($scope.previous);
     var dash_timeStamp = new Date().getTime();
     // console.log(new Date(dashBoard).getTime());
-    console.log(new Date(dash_timeStamp));
+    // console.log(new Date(dash_timeStamp));
 
     // GET restService Call
     var getconfig={

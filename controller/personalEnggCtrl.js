@@ -9,7 +9,9 @@ angular.module('myApp')
           return $auth.isAuthenticated();
       };
 
+      //Getting localStorage 
       var token= localStorageService.get('token');
+
       //Getting Id
       var engineerId = $stateParams.engineerId;
 
@@ -22,7 +24,7 @@ angular.module('myApp')
 
       restService.getRequest('readEmployeePersonalData', getconfig)
       .then(function(data) {
-        console.log("employeeData",data.data.personalData);
+        // console.log("employeeData",data.data.personalData);
         $scope.perId=engineerId;
         $scope.personalArray = data.data.personalData;
         $scope.personalArray.token = token;
