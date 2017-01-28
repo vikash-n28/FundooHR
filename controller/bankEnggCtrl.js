@@ -1,41 +1,54 @@
+/**
+ *bankEngineers controller
+ *@define controller
+ *@param {string} bankEnggCtrl - controller refer to the controller used by HTML element
+ */
 angular.module('myApp')
     .controller('bankEnggCtrl', bankEngg);
 
-    function bankEngg($scope,$state,$auth,$stateParams,$http,localStorageService,restService) {
-      console.log("Engineers Bank is calling !!");
+/**
+ *@method bankEngg - function for bank details
+ *@param {function} selfInvoked - dependencies added
+ *@param {service}  $stateParams - store information about a url
+ *
+ */
+function bankEngg($scope,$rootScope, $state, $auth, $stateParams, $http, localStorageService, restService) {
+    console.log("Engineers Bank is calling !!");
 
-      //Authentication Check
-      $scope.isAuthenticated = function() {
-          return $auth.isAuthenticated();
-      };
-       var token=localStorageService.get('token');
-      // getting Engineer ID
-      var engineerId = $stateParams.engineerId;
+    /**satellizer service*/
+    $scope.isAuthenticated = function() {
+        return $auth.isAuthenticated();
+    };
 
-      // GET restService Call
-      var getconfig={
-          token: token,
-          engineerId: engineerId
-      };
+    /**getting engineer Id from paramquery*/
+    var engineerId = $stateParams.engineerId;
 
-      restService.getRequest('readEmployeeBankData', getconfig)
-      .then(function(data) {
-         // console.log("employeeData",data.data.bankData);
-         $scope.bankArray=data.data.bankData;
-         $scope.bankArray.token = token;
-         $scope.bankArray.engineerId = engineerId;
-      });
+    /**getconfig json*/
+    var getconfig = {
+        // token: token,
+        engineerId: engineerId
+    };
 
-      //Editable Page
-       $scope.saveTable = function() {
-       console.log($scope.bankArray);
+    /**restservice use to get  readEmployeeBankData*/
+    restService.getRequest('readEmployeeBankData', getconfig)
+        .then(function(data) {
+          $rootScope.employeeArray = data.data.employeeData;
+          $rootScope.profileId = engineerId;
+            $scope.bankArray = data.data.bankData;
+            $scope.bankArray.engineerId = engineerId;
+        });
 
-       //UPDATING DATA
-       restService.putRequest('updateEmployeeBankData',$scope.bankArray)
-        .then(function(response) {
-          //console.log("success");
-         $state.reload();
-        })
-       };
+    /**
+     *@method saveTable - function to save editable data
+     */
+    $scope.saveTable = function() {
+        console.log($scope.bankArray);
 
-    }
+        /**restservice use to updateEmployeeBankData*/
+        restService.putRequest('updateEmployeeBankData', $scope.bankArray)
+            .then(function(response) {
+                $state.reload();
+            })
+    };
+
+}

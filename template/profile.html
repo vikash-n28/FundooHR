@@ -1,81 +1,100 @@
 <div class="profileHeader" layout="row" style="position: ;" id="Prof-First-Table">
     <div class="profilePic">
-        <img src="assets/robert.jpg" alt="" id="profile_display-pic" style="width:241px; height:243px;">
+        <img ng-src={{employeeArray.imageUrl}} alt="" id="profile_display-pic" style="width:241px; height:243px;">
     </div>
-   <div flex="99">
-      <div class="rwd-table" layout="column">
-        <div class="" flex>
-           <table class="table-responsive" id="profileHeader">
-             <tr>
-               <th colspan="2"><h2>{{employeeArray.employeeName || '--'}}</h2></th>
-             </tr>
-             <tr>
-               <th><h3>Id</h3></th>
-               <th><h3>{{profileId || '--'}}</h3></th>
-             </tr>
-              <tr>
-                <th><h3>Status</h3></th>
-                <td><h3>{{employeeArray.employeeStatus || '--'}}</h3></td>
-                <th><h3>BL Start Date</h3></th>
-                <td><h3>{{employeeArray.blStartDate || '--'}}</h3></td>
-              </tr>
-              <tr>
-                <th><h3>Company</h3></th>
-                <td><h3>{{employeeArray.company || '--'}}</h3></td>
-                <th><h3>Company Start Date</h3></th>
-                <td><h3>{{employeeArray.companyJoinDate || '--'}}</h3></td>
-              </tr>
-              <tr>
-                <th><h3>Mobile</h3></th>
-                <td><h3>{{employeeArray.mobile || '--'}}</h3></td>
-                <th><h3>Company Leave Date</h3></th>
-                <td><h3>{{employeeArray.companyLeaveDate || '--'}}</h3></td>
-              </tr>
-              <tr>
-                <th><h3>Email Id</h3></th>
-                <td><h3>{{employeeArray.emailId || '--'}}</h3></td>
-                <th><h3>Leaves Taken</h3></th>
-                <td><h3>{{employeeArray.leaveTaken || '--'}}</h3></td>
-              </tr>
-           </table>
-           </div>
-      </div>
-   </div>
+    <div flex="99">
+        <div class="rwd-table" layout="column">
+            <div class="" flex>
+                <table class="table-responsive" id="profileHeader">
+                    <tr>
+                        <th colspan="2">
+                            <h2>{{employeeArray.employeeName || '--'}}</h2></th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <h3>Id</h3></th>
+                        <th>
+                            <h3>{{profileId || '--'}}</h3></th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <h3>Status</h3></th>
+                        <td>
+                            <h3>{{employeeArray.employeeStatus || '--'}}</h3></td>
+                        <th>
+                            <h3>BL Start Date</h3></th>
+                        <td>
+                            <h3>{{employeeArray.blStartDate || '--'}}</h3></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <h3>Company</h3></th>
+                        <td>
+                            <h3>{{employeeArray.company || '--'}}</h3></td>
+                        <th>
+                            <h3>Company Start Date</h3></th>
+                        <td>
+                            <h3>{{employeeArray.companyJoinDate || '--'}}</h3></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <h3>Mobile</h3></th>
+                        <td>
+                            <h3>{{employeeArray.mobile || '--'}}</h3></td>
+                        <th>
+                            <h3>Company Leave Date</h3></th>
+                        <td>
+                            <h3>{{employeeArray.companyLeaveDate || '--'}}</h3></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <h3>Email Id</h3></th>
+                        <td>
+                            <h3>{{employeeArray.emailId || '--'}}</h3></td>
+                        <th>
+                            <h3>Leaves Taken</h3></th>
+                        <td>
+                            <h3>{{employeeArray.leaveTaken || '--'}}</h3></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <div id="wrapper">
-   <!--Sidebar-->
-   <div id="sidebar-wrapper">
-     <ul class="sidebar-nav">
-       <li class="sidebar-brand"  ng-hide="includeMobileTemplate">
-          <a href="" id="toggleButton" class="toggleButton">
-            <div id="nav-icon1" >
-              <span></span>
-              <span></span>
-              <span></span></div>
-           </a>
-       </li>
-       <li ng-if="isAuthenticated()">
-         <a ui-sref=""><img src="assets/attendence.png" id="gyphicon"><span style="margin-left:0px;"><h3>Attendance</h3></span></a>
-       </li>
-       <li ng-if="isAuthenticated()">
-         <a ui-sref="home.summary.personal"><img src="assets/personal.png" id="gyphicon"><span style="margin-left:0px;"><h3>Personal</h3></span></a>
-       </li>
-       <li ng-if="isAuthenticated()">
-         <a ui-sref="home.summary.profile"><img src="assets/profile.png" id="gyphicon"><span style="margin-left:0px;"><h3>Profile</h3></span></a>
-       </li>
-       <li ng-if="isAuthenticated()">
-         <a ui-sref="home.summary.hrdata"><img src="assets/HR Data.png" id="gyphicon"><span style="margin-left:0px;"><h3>HR Data</h3></span></a>
-       </li>
-       <li ng-if="isAuthenticated()">
-         <a ui-sref="home.summary.bank"><img src="assets/Bank.png" id="gyphicon"><span style="margin-left:0px;"><h3>Bank</h3></span></a>
-       </li>
-       <li ng-if="isAuthenticated()">
-         <a ui-sref="home.summary.tracking"><img src="assets/Tracking.png" id="gyphicon"><span style="margin-left:0px;"><h3>Tracking</h3></span></a>
-       </li>
-     </ul>
-   </div>
+    <!--Sidebar-->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand" ng-hide="includeMobileTemplate">
+                <a href="" id="toggleButton" class="toggleButton">
+                    <div id="nav-icon1">
+                        <span></span>
+                        <span></span>
+                        <span></span></div>
+                </a>
+            </li>
+            <li ng-if="isAuthenticated()">
+                <a ><img src="assets/attendence.png" id="gyphicon"><span style="margin-left:0px;"><h3>Attendance</h3></span></a>
+            </li>
+            <li ng-if="isAuthenticated()">
+                <a ui-sref="home.summary.personal({engineerId:profileId})"><img src="assets/personal.png" id="gyphicon"><span style="margin-left:0px;"><h3>Personal</h3></span></a>
+            </li>
+            <li ng-if="isAuthenticated()">
+                <a ui-sref="home.summary.profile({engineerId:profileId})"><img src="assets/profile.png" id="gyphicon"><span style="margin-left:0px;"><h3>Profile</h3></span></a>
+            </li>
+            <li ng-if="isAuthenticated()">
+                <a ui-sref="home.summary.hrdata({engineerId:profileId})"><img src="assets/HR Data.png" id="gyphicon"><span style="margin-left:0px;"><h3>HR Data</h3></span></a>
+            </li>
+            <li ng-if="isAuthenticated()">
+                <a ui-sref="home.summary.bank({engineerId:profileId})"><img src="assets/Bank.png" id="gyphicon"><span style="margin-left:0px;"><h3>Bank</h3></span></a>
+            </li>
+            <li ng-if="isAuthenticated()">
+                <a ui-sref="home.summary.tracking({engineerId:profileId})"><img src="assets/Tracking.png" id="gyphicon"><span style="margin-left:0px;"><h3>Tracking</h3></span></a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <!--Profile Content-->

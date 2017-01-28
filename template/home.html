@@ -19,18 +19,20 @@
             <ul class="nav navbar-nav collapse navbar-collapse" id="user-data">
                 <li id="user" class="dropdown" id="user">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user" id="user-logo" style="font-size: 20px; padding-right: 10px;"><span style="margin-right:10px;"></span>vikash</span>
+                        <span class="glyphicon glyphicon-user" id="user-logo"><span style="margin-right:10px;"></span>vikash</span>
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <a ui-sref="logout"><li id="userDisplay">{{user}}</li>
-                        <li id="logout">LogOut</li></a>
+                        <a ui-sref="logout">
+                            <li id="userDisplay">{{user}}</li>
+                            <li id="logout">LogOut</li>
+                        </a>
                     </ul>
                 </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li id="submenu" ng-if="isAuthenticated()"><a ui-sref="home.dashboard" id="nav-dashboards"><h3>DashBoard</h3><span class="sr-only">(current)</span></a></li>
+                <li id="submenu" ng-if="isAuthenticated()"><a ui-sref="home.dashboard" id="nav-dashboards"><h3>Dashboard</h3><span class="sr-only" id="indicator"></span></a></li>
                 <li id="submenu" ng-if="isAuthenticated()"><a ui-sref="home.engineers" id="nav-engineers"><h3>Engineers</h3></a></li>
                 <li id="submenu"><a href="#" id="nav-attendance"><h3>Attendance</h3></a></li>
                 <li id="submenu"><a href="#" id="nav-reports"><h3>Reports</h3></a></li>
@@ -42,5 +44,5 @@
 
 <!--Home Content Display-->
 <div class="homeContent">
-  <ui-view></ui-view>
+    <ui-view></ui-view>
 </div>
