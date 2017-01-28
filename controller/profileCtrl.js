@@ -1,9 +1,9 @@
 angular.module('myApp')
-    .controller('profileCtrl', prof);
+    .controller('profileCtrl', profile);
 
 
 // Calling Profile Function
-function prof($scope,$rootScope, $state, $http, $auth, $window, $stateParams, localStorageService, restService) {
+function profile($scope, $state, $auth,$stateParams) {
     console.log("ProfileCtrl is Calling..");
 
 
@@ -24,19 +24,4 @@ function prof($scope,$rootScope, $state, $http, $auth, $window, $stateParams, lo
 
     //Getting Id
     var engineerId = $stateParams.engineerId;
-
-    // GET restService Call
-    var getconfig = {
-        // token: localStorageService.get('token'),
-        engineerId: engineerId
-    };
-    restService.getRequest('readEmployeeProfileData', getconfig)
-        .then(function(data) {
-            console.log("employeeData",data.data.profileData);
-            $rootScope.employeeArray = data.data.employeeData;
-            $rootScope.profileId = engineerId;
-            $scope.employeeArray = data.data.employeeData;
-            $scope.profileId = engineerId;
-        });
-    //$state.go('home.summary.personal');
 };

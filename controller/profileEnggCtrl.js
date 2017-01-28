@@ -1,7 +1,7 @@
 angular.module('myApp')
     .controller('proEnggCtrl', profileEngg);
 
-function profileEngg($scope,$rootScope, $state, $auth, $stateParams, $http, localStorageService, restService) {
+function profileEngg($scope,$rootScope, $state, $auth, $stateParams, $http, restService) {
     //Authentication Check
     $scope.isAuthenticated = function() {
         return $auth.isAuthenticated();
@@ -12,17 +12,16 @@ function profileEngg($scope,$rootScope, $state, $auth, $stateParams, $http, loca
 
     // GET restService Call
     var getconfig = {
-        // token: token,
         engineerId: engineerId
     };
 
     restService.getRequest('readEmployeeProfileData', getconfig)
         .then(function(data) {
             // console.log("employeeData",data.data.profileData);
-            $rootScope.employeeArray = data.data.employeeData;
-            $rootScope.profileId = engineerId;
             $scope.profileEngArray = data.data.profileData;
             $scope.profileEngArray.engineerId = engineerId;
+            $rootScope.employeeArray = data.data.employeeData;
+            $rootScope.profileId = engineerId;
         });
 
     //Editable Page

@@ -1,7 +1,7 @@
 angular.module('myApp')
     .controller('hrDataEnggCtrl', hrDataEngg);
 
-function hrDataEngg($scope,$rootScope, $state, $auth, $stateParams, $http, restService) {
+function hrDataEngg($scope, $rootScope, $state, $auth, $stateParams, $http, restService) {
     console.log("Engineers HRData is calling !!");
 
     //Authentication Check
@@ -13,17 +13,16 @@ function hrDataEngg($scope,$rootScope, $state, $auth, $stateParams, $http, restS
 
     // GET restService Call
     var getconfig = {
-        // token: token,
         engineerId: engineerId
     };
 
     restService.getRequest('readEmployeeHRData', getconfig)
         .then(function(data) {
             // console.log("employeeData",data.data.hrData);
-            $rootScope.employeeArray = data.data.employeeData;
-            $rootScope.profileId = engineerId;
             $scope.hrDataArray = data.data.hrData;
             $scope.hrDataArray.engineerId = engineerId;
+            $rootScope.employeeArray = data.data.employeeData;
+            $rootScope.profileId = engineerId;
         });
 
 

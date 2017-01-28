@@ -15,17 +15,16 @@ function trackingEngg($scope,$rootScope, $state, $auth, $stateParams, $http, $q,
 
     // GET restService Call
     var getconfig = {
-        // token: token,
         engineerId: engineerId
     };
 
     restService.getRequest('readEmployeeTrackingData', getconfig)
         .then(function(data) {
             // console.log("employeeData",data.data.trackingData);
-            $rootScope.employeeArray = data.data.employeeData;
-            $rootScope.profileId = engineerId;
             $scope.trackArray = data.data.trackingData;
             $scope.trackArray.engineerId = engineerId;
+            $rootScope.employeeArray = data.data.employeeData;
+            $rootScope.profileId = engineerId;
         });
 
 

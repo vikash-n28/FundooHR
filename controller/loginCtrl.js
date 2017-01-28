@@ -26,7 +26,7 @@ angular.module('myApp')
          *@method login - function to login
          */
         $scope.login = function() {
-            console.log("login once");
+            
             /**Shows loading spinner*/
             $scope.dataloading = true;
 

@@ -100,8 +100,8 @@ angular.module('myApp', ['ui.router', 'ngMaterial', 'satellizer', 'LocalStorageM
             /**profile state*/
             .state('home.summary', {
                 url: 'summary/:engineerId',
-                // params : {engineerId:null},
                 templateUrl: 'template/profile.html',
+                controller: 'profileCtrl',
                 resolve: {
                     loginRequired: loginRequired
                 }

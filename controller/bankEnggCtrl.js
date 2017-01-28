@@ -12,7 +12,7 @@ angular.module('myApp')
  *@param {service}  $stateParams - store information about a url
  *
  */
-function bankEngg($scope,$rootScope, $state, $auth, $stateParams, $http, localStorageService, restService) {
+function bankEngg($scope, $rootScope, $state, $auth, $stateParams, $http, localStorageService, restService) {
     console.log("Engineers Bank is calling !!");
 
     /**satellizer service*/
@@ -25,17 +25,16 @@ function bankEngg($scope,$rootScope, $state, $auth, $stateParams, $http, localSt
 
     /**getconfig json*/
     var getconfig = {
-        // token: token,
         engineerId: engineerId
     };
 
     /**restservice use to get  readEmployeeBankData*/
     restService.getRequest('readEmployeeBankData', getconfig)
         .then(function(data) {
-          $rootScope.employeeArray = data.data.employeeData;
-          $rootScope.profileId = engineerId;
             $scope.bankArray = data.data.bankData;
             $scope.bankArray.engineerId = engineerId;
+            $rootScope.employeeArray = data.data.employeeData;
+            $rootScope.profileId = engineerId;
         });
 
     /**

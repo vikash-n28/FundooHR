@@ -852,7 +852,7 @@ ul.sidebar-nav>li>a>span>h3 {
     #nav-icon1 span {
         display: block;
         position: absolute;
-        height: 8px;
+        height: 6px;
         width: 70%;
         background: rgba(216, 209, 199, 1);
         border-radius: 9px;
@@ -1033,7 +1033,7 @@ div#profileEdit.glyphicon.glyphicon-pencil {
     float: right;
     color: rgba(59, 83, 114, 1);
     font-size: 18px;
-    margin-left: 35vw;
+    /*margin-left: 45vw;*/
     font-size: 25px;
 }
 

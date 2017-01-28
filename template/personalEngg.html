@@ -1,4 +1,4 @@
-<div layout="row" id="Prof-Second-Table">
+<div layout="row" id="Prof-Second-Table" ng-init="prof();">
     <div flex>
         <form editable-form name="editableForm" onaftersave="saveTable()">
             <table class="table-responsive" id="personalTable">
@@ -7,7 +7,7 @@
                     <th>
                         <h3>Id</h3></th>
                     <td>
-                        <h2>{{perId || '--'}}</h2></td>
+                        <h2>{{profileId || '--'}}</h2></td>
                 </tr>
                 <tr>
                     <th>

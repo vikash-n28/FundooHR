@@ -1,7 +1,7 @@
 angular.module('myApp')
     .controller('perEnggCtrl', personal);
 
-function personal($scope,$rootScope, $state, $auth, $stateParams, $http,restService) {
+function personal($scope, $rootScope, $state, $auth, $stateParams, $http, restService) {
     console.log("Engineers Personal is calling !!");
 
     //Authentication Check
@@ -11,22 +11,20 @@ function personal($scope,$rootScope, $state, $auth, $stateParams, $http,restServ
 
     //Getting Id
     var engineerId = $stateParams.engineerId;
-
+    $scope.profileId=engineerId;
 
     // GET restService Call
     var getconfig = {
-        // token: token,
         engineerId: engineerId
     };
 
     restService.getRequest('readEmployeePersonalData', getconfig)
         .then(function(data) {
-            console.log("employeeData",data.data.personalData);
-            $scope.perId =  $stateParams.engineerId;
+            console.log("employeeData", data.data.personalData);
+            $scope.personalArray = data.data.personalData;
+            $scope.personalArray.engineerId = engineerId;
             $rootScope.employeeArray = data.data.employeeData;
             $rootScope.profileId = engineerId;
-            $scope.personalArray = data.data.personalData;
-            $scope.personalArray.engineerId =  $stateParams.engineerId;
         });
 
 
@@ -42,3 +40,17 @@ function personal($scope,$rootScope, $state, $auth, $stateParams, $http,restServ
             })
     };
 }
+
+// function prof() {
+//     console.log("ProfileCtrl is Calling..");
+//
+//
+//     // Sliding SideBar Active
+//     $("#sidebar-wrapper").click(function() {
+//         $(this).toggleClass('active');
+//     });
+//
+//     // toggle Active
+//     $('#nav-icon1').click(function() {
+//         $(this).toggleClass('open');
+//     });

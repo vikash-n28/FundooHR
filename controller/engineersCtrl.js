@@ -15,8 +15,8 @@ function enginers($scope, $state, $auth, $http, localStorageService, restService
     };
 
     restService.getRequest('searchEmployeeByName', getconfig)
-        .then(function(resp) {
-            console.log("employeeData",resp.data.employeeList);
-            $scope.engineers = resp.data.employeeList;
+        .then(function(response) {
+            console.log("employeeData",response.data.employeeList);
+            $scope.engineers = response.data.employeeList;
         });
 };
